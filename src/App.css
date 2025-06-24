@@ -474,3 +474,93 @@ h1 {
     height: 32px;
   }
 }
+
+/* --- BANNERS Y LAYOUT RESPONSIVE --- */
+.links-list-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1.5rem;
+  width: 100%;
+  padding: 1.5rem 0;
+  box-sizing: border-box;
+}
+.ad-side {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+  max-width: 220px;
+  width: 18vw;
+  height: 220px;
+  background: #e3e3e3;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  overflow: hidden;
+}
+.ad-side img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+.ad-space {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem 0 1.5rem 0;
+}
+.ad-space img {
+  width: 100%;
+  max-width: 900px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+/* El grid de links ocupa todo el espacio central */
+.links-grid {
+  flex: 1 1 600px;
+  min-width: 0;
+  max-width: 700px;
+  margin: 0;
+}
+/* Responsive: ocultar banners laterales en móvil */
+@media (max-width: 900px) {
+  .links-list-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+  }
+  .ad-side {
+    display: flex;
+    width: 100%;
+    max-width: 900px;
+    min-width: 0;
+    height: 110px;
+    margin: 0.5rem 0;
+  }
+  .links-grid {
+    max-width: 100vw;
+  }
+}
+/* Responsive: banners arriba/abajo más pequeños en móvil */
+@media (max-width: 700px) {
+  .ad-space img {
+    max-width: 100vw;
+    height: 110px;
+  }
+}
+
+@media (max-width: 600px) {
+  .ad-side {
+    flex-direction: column;
+    height: 80px;
+  }
+  .ad-side img {
+    height: 100%;
+  }
+}
